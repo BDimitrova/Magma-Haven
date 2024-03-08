@@ -1,0 +1,29 @@
+{
+  "name": "magma-haven",
+  "version": "1.0.0",
+  "description": "JS Back-End Exam",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BDimitrova/Magma-Haven.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BDimitrova/Magma-Haven/issues"
+  },
+  "homepage": "https://github.com/BDimitrova/Magma-Haven#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.3",
+    "express-handlebars": "^7.1.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.2.1",
+    "nodemon": "^3.1.0"
+  }
+}
