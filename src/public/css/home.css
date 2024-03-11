@@ -91,6 +91,7 @@ footer p {
 
 .errorContainer {
   position: fixed;
+  margin-top:30px;
   right: 100px;
   min-width: 100px;
   display: block;
@@ -101,11 +102,11 @@ footer p {
   color: rgb(255, 255, 255);
   height: auto;
   width: 320px;
-  box-shadow: 0 5px 10px rgb(128, 14, 209);
+  box-shadow: 0 5px 10px #dbd1c1;
 }
 
 .errorContainer > p {
-  background: rgb(30, 30, 211);
+  background: #D1491C;
   font-size: 20px;
   padding: 20px;
   height: auto;
@@ -124,7 +125,7 @@ footer p {
   animation-fill-mode: forwards;
 }
 
-@keyframes cssAnimation {
+/* @keyframes cssAnimation {
   to {
     width: 0;
     height: 0;
@@ -140,4 +141,4 @@ footer p {
     visibility: hidden;
     padding: 0;
   }
-}
+} */

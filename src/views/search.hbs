@@ -14,25 +14,19 @@
         <button type="submit" class="btn-search">Search</button>
     </form>
 
-    <!-- <div class="search-result">
-                <div class="search-list">
-                    <div class="volcano">
-                        <div class="volcano-img">
-                            <img src="./static/images/etna.jpg">
-                        </div>
-                        <div class="volcano-info">
-                            <h1>Mount Etna</h1>
-                            <p><span>Location: </span>Sicily Italy</p>
-                            <p><span>Volcano Type: </span>Stratovolcanoes</p>
-                        </div>
+    {{#if volcano}}
+    <div class="search-result">
+        <div class="search-list">
+            {{#each volcano}}
+            {{> catalog-card}}
+            {{/each}}
+            
+        </div>
 
-                        <a href="#" class="btn-details">Details</a>
-                    </div>
-                </div>
-
-            </div> -->
-
+    </div>
+    {{else}}
     <div class="no-match">
         <p>No match was found!</p>
     </div>
+    {{/if}}
 </section>
