@@ -39,13 +39,11 @@ router.get('/:volcanoId/details', async (req, res) => {
     let volcanoData = await volcano.toObject();
 
     let isOwner = volcanoData.owner == req.user?._id;
-    let vote = volcano.getBuyers();
+    let vote = volcano.getVote();
 
-    console.log(vote);
+    let isVote = req.user && vote.some(c => c._id == req.user?._id);
 
-    let isVote = req.user && buyer.some(c => c._id == req.user?._id);
-
-    res.render('volcano/details', { ...volcanoData, isOwner, isVote });
+    res.render('volcano/details', { ...volcanoData, isOwner, isVote, vote });
 });
 
 async function isOwner(req, res, next) {
@@ -58,10 +56,10 @@ async function isOwner(req, res, next) {
     }
 }
 
-router.get('/:volcanoId/buy', isOwner, async (req, res) => {
+router.get('/:volcanoId/vote', isOwner, async (req, res) => {
     let volcano = await volcanoService.getOne(req.params.volcanoId);
 
-    volcano.buyer.push(req.user._id);
+    volcano.vote.push(req.user._id);
     await volcano.save();
 
     res.redirect(`/volcano/${req.params.volcanoId}/details`);
